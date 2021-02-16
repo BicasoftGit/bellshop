@@ -11,7 +11,6 @@
         "done": "",
         "": ""
     },
-
     "signin": {
         "title": "",
         "subtitle": "",
@@ -25,7 +24,6 @@
         "noaccount": "",
         "register": ""
     },
-
     "signup": {
         "title": "",
         "subtitle": "",
@@ -40,21 +38,18 @@
         "haveaccount": "",
         "signin": ""
     },
-
     "forgotpassword": {
         "title": "",
         "subtitle": "",
         "email": "",
         "send": ""
     },
-
     "home": {
         "seeall": "",
         "categories": "",
         "newproduct": "",
         "recommended": ""
     },
-
     "notification": {
         "notification": "",
         "notifications": "",
@@ -66,7 +61,6 @@
         "bestoffer": "",
         "mockdesc": ""
     },
-
     "category": {
         "categories": "",
         "choosecategory": "",
@@ -84,7 +78,6 @@
         "womantshirt": "",
         "bikini": ""
     },
-
     "search": {
         "search": "",
         "result": "",
@@ -215,17 +208,17 @@
         "emailaddress": "",
         "phonenumber": "",
         "changepassword": "",
-        "female":"",
-        "save":"",
-        "firstname":"",
-        "profilename":"",
-        "lastname":"",
-        "choosegender":"",
-        "changeemail":"",
-        "changephone":"",
-        "oldpassword":"",
-        "newpassword":"",
-        "newpasswordagain":"",
-        "savedaddress":""
+        "female": "",
+        "save": "",
+        "firstname": "",
+        "profilename": "",
+        "lastname": "",
+        "choosegender": "",
+        "changeemail": "",
+        "changephone": "",
+        "oldpassword": "",
+        "newpassword": "",
+        "newpasswordagain": "",
+        "savedaddress": ""
     }
 }
