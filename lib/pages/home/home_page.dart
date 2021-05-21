@@ -154,9 +154,8 @@ class HomePage extends StatelessWidget {
   SideInAnimation buildSwiper(BuildContext context) {
     return SideInAnimation(
       1,
-      child: Container(
-        width: double.infinity,
-        height: 230.0,
+      child: AspectRatio(
+        aspectRatio: 16/9,
         child: Swiper(
           itemCount: productList.length,
           scrollDirection: Axis.horizontal,

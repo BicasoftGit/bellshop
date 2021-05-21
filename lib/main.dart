@@ -9,8 +9,9 @@ import 'package:provider/provider.dart';
 import 'helpers/helpers.dart';
 import 'pages/pages.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   runApp(
     EasyLocalization(
       child: MyApp(),

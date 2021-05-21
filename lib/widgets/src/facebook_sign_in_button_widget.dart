@@ -20,6 +20,7 @@ class FacebookSignInButtonWidget extends StatelessWidget {
             bottom: 10.0,
             child: Image.asset(
               'assets/images/facebook.png',
+              color: Colors.blue,
             ),
           ),
           OutlinedButton(
@@ -28,7 +29,6 @@ class FacebookSignInButtonWidget extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
-              primary: Theme.of(context).primaryColor,
               side: BorderSide(
                 color: Theme.of(context).accentColor,
               ),

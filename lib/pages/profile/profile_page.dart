@@ -52,7 +52,8 @@ class ProfilePage extends StatelessWidget {
         ),
         title: Text(
           'profile.signout',
-          style: Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 14.0),
+          style:
+              Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 14.0),
         ).tr(),
         trailing: Icon(
           Icons.arrow_forward_ios,
@@ -241,15 +242,6 @@ class ProfilePage extends StatelessWidget {
             style: Theme.of(context).textTheme.subtitle1,
           ).tr(),
           actions: [
-            SizedBox(
-              width: 50.0,
-              child: RaisedButtonWidget(
-                title: 'profile.yes',
-                onPressed: () {
-                  Get.offAll(SignInPage());
-                },
-              ),
-            ),
             TextButton(
               onPressed: () {
                 Get.back();
@@ -260,7 +252,17 @@ class ProfilePage extends StatelessWidget {
                           .bodyText2!
                           .copyWith(fontSize: 14.0))
                   .tr(),
-            )
+            ),
+            TextButton(
+              onPressed: () {
+                Get.offAll(SignInPage());
+              },
+              child: Text('profile.yes',
+                  style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                        fontSize: 14.0,
+                        color: Theme.of(context).primaryColor,
+                      )).tr(),
+            ),
           ],
         );
       },
