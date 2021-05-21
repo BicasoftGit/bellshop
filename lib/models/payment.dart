@@ -1,9 +1,9 @@
 part of 'models.dart';
 
 class Payment {
-  final String title;
-  final String icon;
-  bool isSelected;
+  final String? title;
+  final String? icon;
+  bool? isSelected;
 
   Payment({this.title, this.icon, this.isSelected});
 }

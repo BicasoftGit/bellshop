@@ -1,11 +1,11 @@
 part of 'models.dart';
 
 class Notifications {
-  final String title;
-  final String description;
-  final String date;
-  final String time;
-  final Product product;
+  final String? title;
+  final String? description;
+  final String? date;
+  final String? time;
+  final Product? product;
 
   Notifications(
       {this.title, this.description, this.date, this.time, this.product});

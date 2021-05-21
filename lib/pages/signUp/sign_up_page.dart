@@ -66,7 +66,7 @@ class SignUpPage extends StatelessWidget {
               onTap: navigateToSignInPage,
               child: Text(
                 'signup.signin',
-                style: Theme.of(context).textTheme.headline4.copyWith(
+                style: Theme.of(context).textTheme.headline4!.copyWith(
                       color: Theme.of(context).primaryColor,
                     ),
               ).tr(),

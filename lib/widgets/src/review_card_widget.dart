@@ -21,7 +21,6 @@ class ReviewCardWidget extends StatelessWidget {
             subtitle: SmoothStarRating(
               color: kYellowColor,
               size: 18.0,
-              isReadOnly: true,
               spacing: 2.0,
               starCount: 5,
               rating: 3.5,

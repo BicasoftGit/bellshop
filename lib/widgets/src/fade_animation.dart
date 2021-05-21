@@ -4,7 +4,7 @@ enum _AnimationProps { opacity, translateX }
 
 class FadeInAnimation extends StatelessWidget {
   final int delay;
-  final Widget child;
+  final Widget? child;
 
   FadeInAnimation(this.delay, {this.child});
 

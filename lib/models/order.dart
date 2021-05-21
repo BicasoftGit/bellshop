@@ -1,19 +1,19 @@
 part of 'models.dart';
 
 class Order {
-  final String id;
-  final String orderStatus;
-  final String price;
-  final String dateOrder;
-  final String dateShipping;
-  final String shipping;
-  final String noResi;
-  final String address;
-  final int totalItem;
-  final String shippingPrice;
-  final String importCharges;
-  final String totalPrice;
-  final List<Product> items;
+  final String? id;
+  final String? orderStatus;
+  final String? price;
+  final String? dateOrder;
+  final String? dateShipping;
+  final String? shipping;
+  final String? noResi;
+  final String? address;
+  final int? totalItem;
+  final String? shippingPrice;
+  final String? importCharges;
+  final String? totalPrice;
+  final List<Product>? items;
 
   Order(
       {this.id,

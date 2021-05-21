@@ -16,9 +16,9 @@ class SearchCategoryPage extends StatelessWidget {
           children: categoryList
               .map(
                 (item) => ListTile(
-                  leading: Image.asset(item.icon),
+                  leading: Image.asset(item.icon!),
                   title: Text(
-                    item.name,
+                    item.name!,
                     style: Theme.of(context).textTheme.bodyText2,
                   ).tr(),
                 ),

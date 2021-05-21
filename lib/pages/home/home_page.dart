@@ -181,7 +181,7 @@ class HomePage extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15.0),
                   child: Image.asset(
-                    product.image,
+                    product.image!,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -219,7 +219,7 @@ class HomePage extends StatelessWidget {
   }
 
   Padding buildHeading(BuildContext context,
-      {String title, void Function() onTap}) {
+      {required String title, void Function()? onTap}) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 18.0),
       child: Row(

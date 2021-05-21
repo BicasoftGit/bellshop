@@ -2,8 +2,8 @@ part of '../widgets.dart';
 
 class ActivityCard extends StatelessWidget {
   const ActivityCard({
-    Key key,
-    @required this.activity,
+    Key? key,
+    required this.activity,
   }) : super(key: key);
 
   final Notifications activity;
@@ -21,11 +21,11 @@ class ActivityCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(activity.title,
+                Text(activity.title!,
                     style: Theme.of(context).textTheme.headline4),
                 SizedBox(height: 15.0),
                 ReadMoreText(
-                  activity.description,
+                  activity.description!,
                   style: Theme.of(context).textTheme.subtitle1,
                   textAlign: TextAlign.left,
                   trimLines: 3,

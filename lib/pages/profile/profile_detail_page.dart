@@ -117,7 +117,7 @@ class ProfileDetailpage extends StatelessWidget {
   }
 
   Widget _customListTile(BuildContext context,
-      {IconData icon, String title, String subtitle, void Function() onTap}) {
+      {IconData? icon, required String title, required String subtitle, void Function()? onTap}) {
     return ListTile(
       leading: Icon(
         icon,

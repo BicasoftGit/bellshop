@@ -1,9 +1,9 @@
 part of '../pages.dart';
 
 class ProductDetailPage extends StatelessWidget {
-  final Product product;
+  final Product? product;
 
-  const ProductDetailPage({Key key, @required this.product}) : super(key: key);
+  const ProductDetailPage({Key? key, required this.product}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +89,6 @@ class ProductDetailPage extends StatelessWidget {
             SmoothStarRating(
               color: kYellowColor,
               size: 25.0,
-              isReadOnly: true,
               spacing: 5.0,
               starCount: 5,
               rating: 3.5,
@@ -150,7 +149,7 @@ class ProductDetailPage extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 5.0),
         child: ReadMoreText(
-          product.description,
+          product!.description!,
           trimLines: 4,
           colorClickableText: Theme.of(context).primaryColor,
           trimMode: TrimMode.Line,
@@ -181,10 +180,10 @@ class ProductDetailPage extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18.0),
         child: Text(
-          "\$ ${product.normalPrice}",
+          "\$ ${product!.normalPrice}",
           style: Theme.of(context)
               .textTheme
-              .headline1
+              .headline1!
               .copyWith(color: Theme.of(context).primaryColor),
         ),
       ),
@@ -199,10 +198,9 @@ class ProductDetailPage extends StatelessWidget {
         child: SmoothStarRating(
           color: kYellowColor,
           size: 25.0,
-          isReadOnly: true,
           spacing: 5.0,
           starCount: 5,
-          rating: product.ratingValue,
+          rating: product!.ratingValue!,
           allowHalfRating: true,
           borderColor: kGreyColor,
         ),
@@ -220,7 +218,7 @@ class ProductDetailPage extends StatelessWidget {
           children: [
             Expanded(
               child: Text(
-                product.title,
+                product!.title!,
                 style: Theme.of(context).textTheme.headline3,
                 textAlign: TextAlign.start,
               ),
@@ -246,7 +244,7 @@ class ProductDetailPage extends StatelessWidget {
         width: double.infinity,
         height: 230.0,
         child: Swiper(
-          itemCount: product.images.length,
+          itemCount: product!.images!.length,
           scrollDirection: Axis.horizontal,
           autoplay: true,
           autoplayDelay: 5000,
@@ -260,7 +258,7 @@ class ProductDetailPage extends StatelessWidget {
             ),
           ),
           itemBuilder: (context, index) {
-            var image = product.images[index];
+            var image = product!.images![index];
             return Padding(
               padding: const EdgeInsets.only(bottom: 30.0),
               child: Image.asset(

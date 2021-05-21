@@ -52,7 +52,7 @@ class ProfilePage extends StatelessWidget {
         ),
         title: Text(
           'profile.signout',
-          style: Theme.of(context).textTheme.bodyText2.copyWith(fontSize: 14.0),
+          style: Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 14.0),
         ).tr(),
         trailing: Icon(
           Icons.arrow_forward_ios,
@@ -100,7 +100,7 @@ class ProfilePage extends StatelessWidget {
         title: Text('profile.lighttheme',
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText2
+                    .bodyText2!
                     .copyWith(fontSize: 14.0))
             .tr(),
         trailing: Switch(
@@ -128,7 +128,7 @@ class ProfilePage extends StatelessWidget {
         title: Text('profile.favorite',
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText2
+                    .bodyText2!
                     .copyWith(fontSize: 14.0))
             .tr(),
         trailing: Icon(
@@ -146,7 +146,7 @@ class ProfilePage extends StatelessWidget {
         title: Text('profile.notification',
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText2
+                    .bodyText2!
                     .copyWith(fontSize: 14.0))
             .tr(),
         trailing: Icon(
@@ -170,7 +170,7 @@ class ProfilePage extends StatelessWidget {
         title: Text('profile.payment',
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText2
+                    .bodyText2!
                     .copyWith(fontSize: 14.0))
             .tr(),
         trailing: Icon(
@@ -191,7 +191,7 @@ class ProfilePage extends StatelessWidget {
         title: Text('profile.order',
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText2
+                    .bodyText2!
                     .copyWith(fontSize: 14.0))
             .tr(),
         trailing: Icon(
@@ -231,7 +231,7 @@ class ProfilePage extends StatelessWidget {
             child: Text('profile.signout',
                     style: Theme.of(context)
                         .textTheme
-                        .bodyText2
+                        .bodyText2!
                         .copyWith(fontSize: 14.0))
                 .tr(),
           ),
@@ -250,14 +250,14 @@ class ProfilePage extends StatelessWidget {
                 },
               ),
             ),
-            FlatButton(
+            TextButton(
               onPressed: () {
                 Get.back();
               },
               child: Text('profile.cancel',
                       style: Theme.of(context)
                           .textTheme
-                          .bodyText2
+                          .bodyText2!
                           .copyWith(fontSize: 14.0))
                   .tr(),
             )
@@ -293,7 +293,7 @@ class ProfilePage extends StatelessWidget {
                     title: Text('profile.account',
                             style: Theme.of(context)
                                 .textTheme
-                                .bodyText2
+                                .bodyText2!
                                 .copyWith(fontSize: 14.0))
                         .tr(),
                     trailing: Icon(
@@ -311,7 +311,7 @@ class ProfilePage extends StatelessWidget {
                     title: Text('profile.address',
                             style: Theme.of(context)
                                 .textTheme
-                                .bodyText2
+                                .bodyText2!
                                 .copyWith(fontSize: 14.0))
                         .tr(),
                     trailing: Icon(
@@ -329,9 +329,9 @@ class ProfilePage extends StatelessWidget {
 
   Container headerContent(
     BuildContext context, {
-    String image,
-    String username,
-    String email,
+    required String image,
+    required String username,
+    required String email,
   }) {
     return Container(
       width: double.infinity,
@@ -369,7 +369,7 @@ class ProfilePage extends StatelessWidget {
               username,
               style: Theme.of(context)
                   .textTheme
-                  .headline2
+                  .headline2!
                   .copyWith(color: kBackgroundLightColor),
             ),
             SizedBox(height: 8.0),
@@ -377,7 +377,7 @@ class ProfilePage extends StatelessWidget {
               email,
               style: Theme.of(context)
                   .textTheme
-                  .subtitle1
+                  .subtitle1!
                   .copyWith(color: kBackgroundLightColor),
             ),
           ],

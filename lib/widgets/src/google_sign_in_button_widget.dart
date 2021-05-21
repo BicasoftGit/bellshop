@@ -5,7 +5,7 @@ class GoogleSignInButtonWidget extends StatelessWidget {
   final Function onPressed;
 
   const GoogleSignInButtonWidget(
-      {Key key, @required this.title, @required this.onPressed})
+      {Key? key, required this.title, required this.onPressed})
       : super(key: key);
 
   @override
@@ -23,17 +23,17 @@ class GoogleSignInButtonWidget extends StatelessWidget {
               'assets/images/google_logo.png',
             ),
           ),
-          OutlineButton(
-            onPressed: onPressed,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.0),
+          OutlinedButton(
+            onPressed: onPressed as void Function()?,
+            style: OutlinedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.0),
+              ),
+              primary: Theme.of(context).primaryColor,
+              side: BorderSide(
+                color: Theme.of(context).accentColor,
+              ),
             ),
-            focusColor: Theme.of(context).accentColor,
-            color: Theme.of(context).primaryColor,
-            borderSide: BorderSide(
-              color: Theme.of(context).accentColor,
-            ),
-            highlightedBorderColor: Theme.of(context).accentColor,
             child: Center(
               child: Text(
                 title,

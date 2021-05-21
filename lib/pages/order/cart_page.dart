@@ -94,7 +94,7 @@ class CartPage extends StatelessWidget {
                   'Rp. 41.000.000',
                   style: Theme.of(context)
                       .textTheme
-                      .headline4
+                      .headline4!
                       .copyWith(color: Theme.of(context).primaryColor),
                 )
               ],
@@ -134,11 +134,13 @@ class CartPage extends StatelessWidget {
             SizedBox(
               width: 85.0,
               height: 50.0,
-              child: RaisedButton(
-                color: Theme.of(context).primaryColor,
-                elevation: 0.0,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Theme.of(context).primaryColor,
+                  elevation: 0.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
                 ),
                 child: Text(
                   'order.apply',

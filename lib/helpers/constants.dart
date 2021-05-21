@@ -1,7 +1,7 @@
 part of 'helpers.dart';
 
 Future showToast(
-    {@required String msg, Color backgroundColor, Color textColor}) {
+    {required String msg, Color? backgroundColor, Color? textColor}) {
   return Fluttertoast.showToast(
     msg: msg,
     toastLength: Toast.LENGTH_SHORT,

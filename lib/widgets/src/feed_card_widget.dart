@@ -2,8 +2,8 @@ part of '../widgets.dart';
 
 class FeedCard extends StatelessWidget {
   const FeedCard({
-    Key key,
-    @required this.feed,
+    Key? key,
+    required this.feed,
   }) : super(key: key);
 
   final Notifications feed;
@@ -25,7 +25,7 @@ class FeedCard extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(12.0),
               child: Image.asset(
-                feed.product.image,
+                feed.product!.image!,
                 width: 70.0,
                 fit: BoxFit.fitWidth,
               ),
@@ -35,11 +35,11 @@ class FeedCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(feed.title,
+                  Text(feed.title!,
                       style: Theme.of(context).textTheme.headline3),
                   SizedBox(height: 8.0),
                   ReadMoreText(
-                    feed.description,
+                    feed.description!,
                     style: Theme.of(context).textTheme.subtitle1,
                     textAlign: TextAlign.left,
                     trimLines: 3,

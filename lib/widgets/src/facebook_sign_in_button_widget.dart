@@ -1,11 +1,10 @@
 part of '../widgets.dart';
 
 class FacebookSignInButtonWidget extends StatelessWidget {
-  final String title;
-  final void Function() onPressed;
+  final String? title;
+  final void Function()? onPressed;
 
-  const FacebookSignInButtonWidget(
-      {Key key, this.title,  this.onPressed})
+  const FacebookSignInButtonWidget({Key? key, this.title, this.onPressed})
       : super(key: key);
 
   @override
@@ -23,20 +22,20 @@ class FacebookSignInButtonWidget extends StatelessWidget {
               'assets/images/facebook.png',
             ),
           ),
-          OutlineButton(
+          OutlinedButton(
             onPressed: onPressed,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.0),
+            style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.0),
+              ),
+              primary: Theme.of(context).primaryColor,
+              side: BorderSide(
+                color: Theme.of(context).accentColor,
+              ),
             ),
-            focusColor: Theme.of(context).accentColor,
-            color: Theme.of(context).primaryColor,
-            borderSide: BorderSide(
-              color: Theme.of(context).accentColor,
-            ),
-            highlightedBorderColor: Theme.of(context).accentColor,
             child: Center(
               child: Text(
-                title,
+                title!,
                 style: Theme.of(context).textTheme.bodyText2,
               ).tr(),
             ),

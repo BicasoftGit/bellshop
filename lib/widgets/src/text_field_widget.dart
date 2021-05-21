@@ -4,13 +4,13 @@ class TextFieldWidget extends StatefulWidget {
   final String hintText;
   final TextInputType keyboardType;
   final bool obscureText;
-  final Widget prefixIcon;
-  final String value;
+  final Widget? prefixIcon;
+  final String? value;
 
   TextFieldWidget({
-    @required this.hintText,
-    @required this.keyboardType,
-    @required this.obscureText,
+    required this.hintText,
+    required this.keyboardType,
+    required this.obscureText,
     this.prefixIcon,
     this.value,
   });
@@ -21,11 +21,11 @@ class TextFieldWidget extends StatefulWidget {
 
 class _TextFieldWidgetState extends State<TextFieldWidget> {
   final TextEditingController valueCtrl = TextEditingController();
-  String valueStr;
+  String? valueStr;
   @override
   void initState() {
     super.initState();
-    valueCtrl.text = widget.value;
+    valueCtrl.text = widget.value!;
   }
 
   @override

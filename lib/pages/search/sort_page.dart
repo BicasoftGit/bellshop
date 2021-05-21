@@ -55,14 +55,14 @@ class _SortPageState extends State<SortPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    sort.label,
-                    style: Theme.of(context).textTheme.bodyText2.copyWith(
-                          color: sort.isSelected
+                    sort.label!,
+                    style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                          color: sort.isSelected!
                               ? Theme.of(context).primaryColor
                               : null,
                         ),
                   ).tr(),
-                  sort.isSelected
+                  sort.isSelected!
                       ? Icon(Icons.done, color: Theme.of(context).primaryColor)
                       : Container(),
                 ],
@@ -93,8 +93,8 @@ class _SortPageState extends State<SortPage> {
 }
 
 class SortModel {
-  final String label;
-  bool isSelected;
+  final String? label;
+  bool? isSelected;
 
   SortModel({this.label, this.isSelected});
 }

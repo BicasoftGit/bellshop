@@ -1,15 +1,15 @@
 part of 'models.dart';
 
 class Product {
-  final int id;
-  final String image;
-  final String title;
-  final String normalPrice;
-  final String discountPrice;
-  final double ratingValue;
-  final String description;
-  final bool isOffer;
-  final List<String> images;
+  final int? id;
+  final String? image;
+  final String? title;
+  final String? normalPrice;
+  final String? discountPrice;
+  final double? ratingValue;
+  final String? description;
+  final bool? isOffer;
+  final List<String>? images;
 
   const Product({
     this.id,

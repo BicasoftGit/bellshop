@@ -7,7 +7,7 @@ class OnBoardingPage extends StatefulWidget {
 
 class _OnBoardingPageState extends State<OnBoardingPage> {
   int _pageIndex = 0;
-  PageController _pageController;
+  PageController? _pageController;
 
   @override
   void initState() {
@@ -34,7 +34,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     if (_pageIndex == 2) {
       Get.offAll(SignInPage());
     } else {
-      _pageController.nextPage(
+      _pageController!.nextPage(
         duration: Duration(milliseconds: 300),
         curve: Curves.ease,
       );
@@ -72,21 +72,21 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   child: Column(
                     children: [
                       Image.asset(
-                        item.image,
+                        item.image!,
                         width: MediaQuery.of(context).size.height / 2,
                       ),
                       SizedBox(height: 15.0),
                       Text(
-                        item.title,
+                        item.title!,
                         style:
-                            theme.textTheme.headline3.copyWith(fontSize: 30.0),
+                            theme.textTheme.headline3!.copyWith(fontSize: 30.0),
                         textAlign: TextAlign.center,
                       ).tr(),
                       SizedBox(height: 15.0),
                       Text(
-                        item.subtitle,
+                        item.subtitle!,
                         style:
-                            theme.textTheme.subtitle1.copyWith(fontSize: 15.0),
+                            theme.textTheme.subtitle1!.copyWith(fontSize: 15.0),
                         textAlign: TextAlign.center,
                       ).tr(),
                     ],
@@ -157,9 +157,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 }
 
 class OnBoardingModel {
-  final String title;
-  final String subtitle;
-  final String image;
+  final String? title;
+  final String? subtitle;
+  final String? image;
 
   OnBoardingModel({this.title, this.subtitle, this.image});
 }

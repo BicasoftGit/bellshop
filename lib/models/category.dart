@@ -1,9 +1,9 @@
 part of 'models.dart';
 
 class Category {
-  final int id;
-  final String name;
-  final String icon;
+  final int? id;
+  final String? name;
+  final String? icon;
 
   Category({this.id, this.name, this.icon});
 }

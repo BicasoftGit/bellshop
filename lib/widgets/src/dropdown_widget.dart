@@ -1,16 +1,16 @@
 part of '../widgets.dart';
 
 class DropdownWidget extends StatefulWidget {
-  final String txTitle;
+  final String? txTitle;
 
-  const DropdownWidget({Key key, this.txTitle}) : super(key: key);
+  const DropdownWidget({Key? key, this.txTitle}) : super(key: key);
 
   @override
   _DropdownWidgetState createState() => _DropdownWidgetState();
 }
 
 class _DropdownWidgetState extends State<DropdownWidget> {
-  String initialValue;
+  String? initialValue;
 
   @override
   void initState() {
@@ -32,7 +32,7 @@ class _DropdownWidgetState extends State<DropdownWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            widget.txTitle,
+            widget.txTitle!,
             style: Theme.of(context).textTheme.subtitle2,
           ),
           SizedBox(

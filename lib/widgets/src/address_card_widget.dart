@@ -1,10 +1,10 @@
 part of '../widgets.dart';
 
 class AddressCard extends StatefulWidget {
-  final Address address;
-  final void Function() onPressed;
+  final Address? address;
+  final void Function()? onPressed;
 
-  const AddressCard({Key key, this.address, this.onPressed}) : super(key: key);
+  const AddressCard({Key? key, this.address, this.onPressed}) : super(key: key);
 
   @override
   _AddressCardState createState() => _AddressCardState();
@@ -22,22 +22,22 @@ class _AddressCardState extends State<AddressCard> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.0),
           border: Border.all(
-            color: widget.address.isSelected
+            color: widget.address!.isSelected!
                 ? Theme.of(context).primaryColor
                 : Theme.of(context).accentColor,
-            width: widget.address.isSelected ? 2.0 : 1.0,
+            width: widget.address!.isSelected! ? 2.0 : 1.0,
           ),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(widget.address.fullName,
+            Text(widget.address!.fullName!,
                 style: Theme.of(context).textTheme.headline4),
             SizedBox(height: 8.0),
-            Text(widget.address.streetAddress,
+            Text(widget.address!.streetAddress!,
                 style: Theme.of(context).textTheme.subtitle1),
             SizedBox(height: 8.0),
-            Text(widget.address.phoneNumber,
+            Text(widget.address!.phoneNumber!,
                 style: Theme.of(context).textTheme.subtitle1),
             SizedBox(height: 8.0),
             Row(
@@ -80,7 +80,7 @@ class _AddressCardState extends State<AddressCard> {
             style: Theme.of(context).textTheme.bodyText2,
           ).tr(),
           actions: [
-            FlatButton(
+            TextButton(
               onPressed: () {
                 Get.back();
 
@@ -91,7 +91,7 @@ class _AddressCardState extends State<AddressCard> {
                 style: Theme.of(context).textTheme.subtitle1,
               ).tr(),
             ),
-            FlatButton(
+            TextButton(
               onPressed: () {
                 showToast(msg: "Confirm delete clicked!");
               },
@@ -99,7 +99,7 @@ class _AddressCardState extends State<AddressCard> {
                 'product.yes',
                 style: Theme.of(context)
                     .textTheme
-                    .headline4
+                    .headline4!
                     .copyWith(color: Theme.of(context).primaryColor),
               ).tr(),
             ),

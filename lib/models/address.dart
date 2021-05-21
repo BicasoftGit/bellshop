@@ -1,12 +1,12 @@
 part of 'models.dart';
 
 class Address {
-  final String fullName;
-  final String streetAddress;
-  final String city;
-  final String zipCode;
-  final String phoneNumber;
-  bool isSelected;
+  final String? fullName;
+  final String? streetAddress;
+  final String? city;
+  final String? zipCode;
+  final String? phoneNumber;
+  bool? isSelected;
 
   Address(
       {this.fullName,

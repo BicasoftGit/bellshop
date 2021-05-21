@@ -2,8 +2,8 @@ part of '../widgets.dart';
 
 class OfferCard extends StatelessWidget {
   const OfferCard({
-    Key key,
-    @required this.activity,
+    Key? key,
+    required this.activity,
   }) : super(key: key);
 
   final Notifications activity;
@@ -21,7 +21,7 @@ class OfferCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(activity.title,
+                Text(activity.title!,
                         style: Theme.of(context).textTheme.headline3)
                     .tr(),
                 SizedBox(height: 8.0),

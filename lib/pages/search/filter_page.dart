@@ -150,10 +150,10 @@ class _FilterPageState extends State<FilterPage> {
 
 ///---------------------------------------------------------------------------------------------Widget-----------------------------------
 class SubCategoryFilterSearch extends StatelessWidget {
-  final String title;
-  final List<String> items;
+  final String? title;
+  final List<String>? items;
 
-  const SubCategoryFilterSearch({Key key, this.title, this.items})
+  const SubCategoryFilterSearch({Key? key, this.title, this.items})
       : super(key: key);
 
   @override
@@ -164,13 +164,13 @@ class SubCategoryFilterSearch extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            title,
+            title!,
             style: Theme.of(context).textTheme.bodyText1,
           ).tr(),
           SizedBox(height: 12.0),
           Wrap(
             spacing: 10,
-            children: items
+            children: items!
                 .map((item) => ItemBoxFilterSearch(
                       label: item,
                     ))
@@ -184,9 +184,9 @@ class SubCategoryFilterSearch extends StatelessWidget {
 
 ///----------------------------------------------------------------------------------------------Widget--------------------------------------
 class ItemBoxFilterSearch extends StatefulWidget {
-  final String label;
+  final String? label;
 
-  const ItemBoxFilterSearch({Key key, this.label}) : super(key: key);
+  const ItemBoxFilterSearch({Key? key, this.label}) : super(key: key);
 
   @override
   _ItemBoxFilterSearchState createState() => _ItemBoxFilterSearchState();
@@ -211,11 +211,11 @@ class _ItemBoxFilterSearchState extends State<ItemBoxFilterSearch> {
           child: Container(
             decoration: BoxDecoration(
               color: _isSelected ? Colors.blue[100] : Colors.white,
-              border: Border.all(width: 1, color: Colors.grey[200]),
+              border: Border.all(width: 1, color: Colors.grey[200]!),
               borderRadius: BorderRadius.all(Radius.circular(5.0)),
             ),
             padding: EdgeInsets.all(8),
-            child: Text(widget.label,
+            child: Text(widget.label!,
                     softWrap: true,
                     textWidthBasis: TextWidthBasis.parent,
                     style: Theme.of(context).textTheme.subtitle2)

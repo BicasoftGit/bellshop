@@ -48,10 +48,10 @@ class Search extends SearchDelegate {
     final suggestionList = productList.map((e) => e).toList();
     final dataList = query.isEmpty
         ? suggestionList
-            .where((element) => element.title.toLowerCase().startsWith(query))
+            .where((element) => element.title!.toLowerCase().startsWith(query))
             .toList()
         : suggestionList
-            .where((element) => element.title.toLowerCase().startsWith(query))
+            .where((element) => element.title!.toLowerCase().startsWith(query))
             .toList();
     return dataList.isEmpty
         ? Padding(
@@ -107,10 +107,10 @@ class Search extends SearchDelegate {
     final suggestionList = productList.map((e) => e).toList();
     final dataList = query.isEmpty
         ? suggestionList
-            .where((element) => element.title.toLowerCase().startsWith(query))
+            .where((element) => element.title!.toLowerCase().startsWith(query))
             .toList()
         : suggestionList
-            .where((element) => element.title.toLowerCase().startsWith(query))
+            .where((element) => element.title!.toLowerCase().startsWith(query))
             .toList();
     final themeProv = Provider.of<ThemeChangerProvider>(context);
     return ListView.builder(
@@ -122,8 +122,8 @@ class Search extends SearchDelegate {
             ListTile(
               title: RichText(
                 text: TextSpan(
-                  text: data.title.substring(0, query.length),
-                  style: Theme.of(context).textTheme.headline3.copyWith(
+                  text: data.title!.substring(0, query.length),
+                  style: Theme.of(context).textTheme.headline3!.copyWith(
                         color: themeProv.isLightTheme
                             ? kPrimaryLightFontColor
                             : kPrimaryDarkFontColor,
@@ -132,8 +132,8 @@ class Search extends SearchDelegate {
                       ),
                   children: [
                     TextSpan(
-                      text: data.title.substring(query.length),
-                      style: Theme.of(context).textTheme.headline3.copyWith(
+                      text: data.title!.substring(query.length),
+                      style: Theme.of(context).textTheme.headline3!.copyWith(
                             color: themeProv.isLightTheme
                                 ? kPrimaryLightFontColor
                                 : kPrimaryDarkFontColor,
@@ -158,9 +158,9 @@ class Search extends SearchDelegate {
 
 class SearchProductGridCard extends StatelessWidget {
   final void Function() onTap;
-  final Product product;
+  final Product? product;
 
-  const SearchProductGridCard({Key key, @required this.onTap, this.product})
+  const SearchProductGridCard({Key? key, required this.onTap, this.product})
       : super(key: key);
 
   @override
@@ -181,7 +181,7 @@ class SearchProductGridCard extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(12.0),
                     child: Image.asset(
-                      product.image,
+                      product!.image!,
                       height: 150.0,
                       fit: BoxFit.cover,
                       width: double.infinity,
@@ -189,7 +189,7 @@ class SearchProductGridCard extends StatelessWidget {
                   ),
                   SizedBox(height: 8.0),
                   Text(
-                    product.title,
+                    product!.title!,
                     style: GoogleFonts.poppins(
                       color: theme.isLightTheme
                           ? kPrimaryLightFontColor
@@ -205,7 +205,7 @@ class SearchProductGridCard extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        "\$${product.normalPrice}",
+                        "\$${product!.normalPrice}",
                         style: GoogleFonts.poppins(
                           color: kPrimaryColor,
                           fontSize: 16.0,
@@ -216,9 +216,9 @@ class SearchProductGridCard extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                       SizedBox(width: 5.0),
-                      product.isOffer
+                      product!.isOffer!
                           ? Text(
-                              "\$${product.discountPrice}",
+                              "\$${product!.discountPrice}",
                               style: GoogleFonts.poppins(
                                 color: theme.isLightTheme
                                     ? kSecondaryLightFontColor
@@ -237,8 +237,7 @@ class SearchProductGridCard extends StatelessWidget {
                     color: kYellowColor,
                     spacing: 1.0,
                     size: 15.0,
-                    rating: product.ratingValue,
-                    isReadOnly: true,
+                    rating: product!.ratingValue!,
                     starCount: 5,
                     allowHalfRating: true,
                     borderColor: Theme.of(context).accentColor,
@@ -246,7 +245,7 @@ class SearchProductGridCard extends StatelessWidget {
                   SizedBox(height: 5.0),
                 ],
               ),
-              product.isOffer
+              product!.isOffer!
                   ? Positioned(
                       top: 8.0,
                       left: 8.0,
@@ -264,7 +263,7 @@ class SearchProductGridCard extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: Theme.of(context)
                                 .textTheme
-                                .subtitle2
+                                .subtitle2!
                                 .copyWith(color: kBackgroundLightColor),
                           ),
                         ),

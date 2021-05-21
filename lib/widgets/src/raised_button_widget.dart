@@ -5,9 +5,9 @@ class RaisedButtonWidget extends StatelessWidget {
   final void Function() onPressed;
 
   const RaisedButtonWidget({
-    Key key,
-    @required this.title,
-    @required this.onPressed,
+    Key? key,
+    required this.title,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -26,18 +26,20 @@ class RaisedButtonWidget extends StatelessWidget {
           ),
         ],
       ),
-      child: RaisedButton(
+      child: ElevatedButton(
         onPressed: onPressed,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0),
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+          primary: Theme.of(context).primaryColor,
         ),
-        color: Theme.of(context).primaryColor,
         child: Center(
           child: Text(
             title,
             style: Theme.of(context)
                 .textTheme
-                .bodyText2
+                .bodyText2!
                 .copyWith(color: kBackgroundLightColor),
           ).tr(),
         ),

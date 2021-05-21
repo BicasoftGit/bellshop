@@ -4,13 +4,13 @@ class TextFormFieldWidget extends StatelessWidget {
   final String hintText;
   final TextInputType keyboardType;
   final bool obscureText;
-  final Widget prefixIcon;
-  final String value;
+  final Widget? prefixIcon;
+  final String? value;
 
   TextFormFieldWidget({
-    @required this.hintText,
-    @required this.keyboardType,
-    @required this.obscureText,
+    required this.hintText,
+    required this.keyboardType,
+    required this.obscureText,
     this.prefixIcon,
     this.value,
   });

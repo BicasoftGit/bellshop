@@ -5,7 +5,7 @@ class ProductCard extends StatelessWidget {
   final bool isHorizontalList;
 
   const ProductCard(
-      {Key key, @required this.product, @required this.isHorizontalList})
+      {Key? key, required this.product, required this.isHorizontalList})
       : super(key: key);
 
   @override
@@ -27,7 +27,7 @@ class ProductCard extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(12.0),
                     child: Image.asset(
-                      product.image,
+                      product.image!,
                       height: 150.0,
                       fit: BoxFit.cover,
                       width: double.infinity,
@@ -35,7 +35,7 @@ class ProductCard extends StatelessWidget {
                   ),
                   SizedBox(height: 8.0),
                   Text(
-                    product.title,
+                    product.title!,
                     style: Theme.of(context).textTheme.headline5,
                     textAlign: TextAlign.left,
                     maxLines: 1,
@@ -48,19 +48,19 @@ class ProductCard extends StatelessWidget {
                         "\$${product.normalPrice}",
                         style: Theme.of(context)
                             .textTheme
-                            .headline4
+                            .headline4!
                             .copyWith(color: Theme.of(context).primaryColor),
                         textAlign: TextAlign.left,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
                       SizedBox(width: 5.0),
-                      product.isOffer
+                      product.isOffer!
                           ? Text(
                               "\$${product.discountPrice}",
                               style: Theme.of(context)
                                   .textTheme
-                                  .subtitle2
+                                  .subtitle2!
                                   .copyWith(
                                       decoration: TextDecoration.lineThrough),
                               textAlign: TextAlign.left,
@@ -74,8 +74,7 @@ class ProductCard extends StatelessWidget {
                     color: kYellowColor,
                     spacing: 1.0,
                     size: 15.0,
-                    rating: product.ratingValue,
-                    isReadOnly: true,
+                    rating: product.ratingValue!,
                     starCount: 5,
                     allowHalfRating: true,
                     borderColor: Theme.of(context).accentColor,
@@ -83,7 +82,7 @@ class ProductCard extends StatelessWidget {
                   SizedBox(height: 5.0),
                 ],
               ),
-              product.isOffer
+              product.isOffer!
                   ? Positioned(
                       top: 8.0,
                       left: 8.0,
@@ -101,7 +100,7 @@ class ProductCard extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: Theme.of(context)
                                 .textTheme
-                                .subtitle2
+                                .subtitle2!
                                 .copyWith(color: kBackgroundLightColor),
                           ),
                         ),

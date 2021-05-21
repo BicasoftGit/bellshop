@@ -73,7 +73,7 @@ class CartCard extends StatelessWidget {
                             '\$50',
                             style: Theme.of(context)
                                 .textTheme
-                                .headline1
+                                .headline1!
                                 .apply(color: Theme.of(context).primaryColor),
                           ),
                         ),

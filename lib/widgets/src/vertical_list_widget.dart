@@ -3,8 +3,8 @@ part of '../widgets.dart';
 class VerticalList extends StatelessWidget {
   final List<Product> itemCount;
   VerticalList({
-    Key key,
-    @required this.itemCount,
+    Key? key,
+    required this.itemCount,
   }) : super(key: key);
 
   @override

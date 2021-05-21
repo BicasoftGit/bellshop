@@ -3,8 +3,8 @@ part of '../widgets.dart';
 class HorizontalListView extends StatelessWidget {
   final List<Product> itemCount;
   HorizontalListView({
-    Key key,
-    @required this.itemCount,
+    Key? key,
+    required this.itemCount,
   }) : super(key: key);
 
   @override

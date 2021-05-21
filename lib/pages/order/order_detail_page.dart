@@ -1,9 +1,9 @@
 part of '../pages.dart';
 
 class OrderDetailPage extends StatelessWidget {
-  final Order order;
+  final Order? order;
 
-  const OrderDetailPage({Key key, this.order}) : super(key: key);
+  const OrderDetailPage({Key? key, this.order}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class OrderDetailPage extends StatelessWidget {
               Text('order.product', style: theme.textTheme.headline3).tr(),
               SizedBox(height: 12.0),
               Column(
-                children: order.items.map((e) {
+                children: order!.items!.map((e) {
                   return productCard(context, e);
                 }).toList(),
               ),
@@ -42,16 +42,16 @@ class OrderDetailPage extends StatelessWidget {
                 child: Column(
                   children: [
                     orderCardItem(context,
-                        title: "order.shippingdate", data: order.dateShipping),
+                        title: "order.shippingdate", data: order!.dateShipping!),
                     SizedBox(height: 12.0),
                     orderCardItem(context,
-                        title: "order.shippingtype", data: order.shipping),
+                        title: "order.shippingtype", data: order!.shipping!),
                     SizedBox(height: 12.0),
                     orderCardItem(context,
-                        title: "order.shippingid", data: order.noResi),
+                        title: "order.shippingid", data: order!.noResi!),
                     SizedBox(height: 12.0),
                     orderCardItem(context,
-                        title: "order.destination", data: order.address),
+                        title: "order.destination", data: order!.address!),
                   ],
                 ),
               ),
@@ -70,20 +70,20 @@ class OrderDetailPage extends StatelessWidget {
                 child: Column(
                   children: [
                     orderCardItem(context,
-                        title: tr("order.items") + " (${order.totalItem})",
-                        data: "\$ ${order.price}"),
+                        title: tr("order.items") + " (${order!.totalItem})",
+                        data: "\$ ${order!.price}"),
                     SizedBox(height: 12.0),
                     orderCardItem(context,
                         title: "order.shipping",
-                        data: "\$ ${order.shippingPrice}"),
+                        data: "\$ ${order!.shippingPrice}"),
                     SizedBox(height: 12.0),
                     orderCardItem(context,
                         title: "order.importcharges",
-                        data: "\$ ${order.importCharges}"),
+                        data: "\$ ${order!.importCharges}"),
                     SizedBox(height: 12.0),
                     priceItem(context,
                         title: "order.totalprice",
-                        data: "\$ ${order.totalPrice}"),
+                        data: "\$ ${order!.totalPrice}"),
                   ],
                 ),
               ),
@@ -111,7 +111,7 @@ class OrderDetailPage extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(15.0),
             child: Image.asset(
-              e.image,
+              e.image!,
               width: 80.0,
               height: 80.0,
               fit: BoxFit.cover,
@@ -123,7 +123,7 @@ class OrderDetailPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  e.title,
+                  e.title!,
                   style: Theme.of(context).textTheme.headline4,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
@@ -133,7 +133,7 @@ class OrderDetailPage extends StatelessWidget {
                   "\$ ${e.normalPrice}",
                   style: Theme.of(context)
                       .textTheme
-                      .headline3
+                      .headline3!
                       .copyWith(color: kPrimaryColor),
                 ),
               ],
@@ -151,7 +151,7 @@ class OrderDetailPage extends StatelessWidget {
     );
   }
 
-  Widget orderCardItem(BuildContext context, {String title, String data}) {
+  Widget orderCardItem(BuildContext context, {required String title, required String data}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -168,7 +168,7 @@ class OrderDetailPage extends StatelessWidget {
     );
   }
 
-  Widget priceItem(BuildContext context, {String title, String data}) {
+  Widget priceItem(BuildContext context, {required String title, required String data}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [

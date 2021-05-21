@@ -4,7 +4,7 @@ class ChangeNamePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomPadding: true,
+      resizeToAvoidBottomInset:  true,
       appBar: buildAppBar(context),
       body: Container(
         child: Column(

@@ -1,9 +1,9 @@
 part of '../widgets.dart';
 
 class ProductGridCard extends StatelessWidget {
-  final Product product;
+  final Product? product;
 
-  const ProductGridCard({Key key, this.product}) : super(key: key);
+  const ProductGridCard({Key? key, this.product}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class ProductGridCard extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(12.0),
                     child: Image.asset(
-                      product.image,
+                      product!.image!,
                       height: 150.0,
                       fit: BoxFit.cover,
                       width: double.infinity,
@@ -32,7 +32,7 @@ class ProductGridCard extends StatelessWidget {
                   ),
                   SizedBox(height: 8.0),
                   Text(
-                    product.title,
+                    product!.title!,
                     style: Theme.of(context).textTheme.headline5,
                     textAlign: TextAlign.left,
                     maxLines: 1,
@@ -42,22 +42,22 @@ class ProductGridCard extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        "\$${product.normalPrice}",
+                        "\$${product!.normalPrice}",
                         style: Theme.of(context)
                             .textTheme
-                            .headline4
+                            .headline4!
                             .copyWith(color: Theme.of(context).primaryColor),
                         textAlign: TextAlign.left,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
                       SizedBox(width: 5.0),
-                      product.isOffer
+                      product!.isOffer!
                           ? Text(
-                              "\$${product.discountPrice}",
+                              "\$${product!.discountPrice}",
                               style: Theme.of(context)
                                   .textTheme
-                                  .subtitle2
+                                  .subtitle2!
                                   .copyWith(
                                       decoration: TextDecoration.lineThrough),
                               textAlign: TextAlign.left,
@@ -71,8 +71,7 @@ class ProductGridCard extends StatelessWidget {
                     color: kYellowColor,
                     spacing: 1.0,
                     size: 15.0,
-                    rating: product.ratingValue,
-                    isReadOnly: true,
+                    rating: product!.ratingValue!,
                     starCount: 5,
                     allowHalfRating: true,
                     borderColor: Theme.of(context).accentColor,
@@ -80,7 +79,7 @@ class ProductGridCard extends StatelessWidget {
                   SizedBox(height: 5.0),
                 ],
               ),
-              product.isOffer
+              product!.isOffer!
                   ? Positioned(
                       top: 8.0,
                       left: 8.0,
@@ -98,7 +97,7 @@ class ProductGridCard extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: Theme.of(context)
                                 .textTheme
-                                .subtitle2
+                                .subtitle2!
                                 .copyWith(color: kBackgroundLightColor),
                           ),
                         ),

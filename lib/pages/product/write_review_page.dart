@@ -72,7 +72,6 @@ class WriteReview extends StatelessWidget {
       rating: 4.0,
       starCount: 5,
       spacing: 1.5,
-      isReadOnly: false,
     );
   }
 

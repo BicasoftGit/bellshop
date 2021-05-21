@@ -95,7 +95,7 @@ class _SignInPageState extends State<SignInPage> {
                 'signin.register',
                 style: Theme.of(context)
                     .textTheme
-                    .headline4
+                    .headline4!
                     .copyWith(color: Theme.of(context).primaryColor),
               ).tr(),
             )
@@ -145,7 +145,7 @@ class _SignInPageState extends State<SignInPage> {
           child: Text(
             'signin.forgot',
             style:
-                Theme.of(context).textTheme.bodyText2.copyWith(fontSize: 14.0),
+                Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 14.0),
           ).tr(),
         ),
       ),

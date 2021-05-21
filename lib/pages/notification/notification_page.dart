@@ -64,10 +64,10 @@ class NotificationPage extends StatelessWidget {
 
   ListTile customListTile(
     BuildContext context, {
-    void Function() onTap,
-    String title,
-    String icon,
-    String count,
+    void Function()? onTap,
+    required String title,
+    required String icon,
+    required String count,
   }) {
     return ListTile(
       onTap: onTap,
@@ -78,7 +78,7 @@ class NotificationPage extends StatelessWidget {
         backgroundColor: Theme.of(context).primaryColor,
         child: Text(
           count,
-          style: Theme.of(context).textTheme.subtitle2.apply(
+          style: Theme.of(context).textTheme.subtitle2!.apply(
                 color: Colors.white,
               ),
         ),

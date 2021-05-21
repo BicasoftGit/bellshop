@@ -9,9 +9,9 @@ class BottomNavigationBarPage extends StatefulWidget {
 class _BottomNavigationBarPageState extends State<BottomNavigationBarPage>
     with TickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _scaffoldkey = GlobalKey<ScaffoldState>();
-  TabController _tabController;
-  AnimationController _animationController;
-  DateTime currentBackPressTime;
+  TabController? _tabController;
+  late AnimationController _animationController;
+  DateTime? currentBackPressTime;
   int _currentTab = 0;
 
   var currentTab = [
@@ -67,7 +67,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage>
           onTap: (index) {
             setState(() {
               _currentTab = index;
-              _tabController.animateTo(_currentTab);
+              _tabController!.animateTo(_currentTab);
               _animationController.reverse();
             });
           },
@@ -97,7 +97,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage>
     DateTime now = DateTime.now();
     if (_currentTab != 1) {
       if (currentBackPressTime == null ||
-          now.difference(currentBackPressTime) > Duration(seconds: 4)) {
+          now.difference(currentBackPressTime!) > Duration(seconds: 4)) {
         currentBackPressTime = now;
         showToast(msg: 'Press Again to Exit');
         return Future.value(false);

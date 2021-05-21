@@ -2,8 +2,8 @@ part of '../widgets.dart';
 
 class OrderCard extends StatelessWidget {
   const OrderCard({
-    Key key,
-    @required this.order,
+    Key? key,
+    required this.order,
   }) : super(key: key);
 
   final Order order;
@@ -25,16 +25,16 @@ class OrderCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(order.id,
+            Text(order.id!,
                 style: Theme.of(context)
                     .textTheme
-                    .headline3
+                    .headline3!
                     .copyWith(color: Theme.of(context).primaryColor)),
             SizedBox(height: 12.0),
-            Text(order.dateOrder, style: Theme.of(context).textTheme.subtitle2),
+            Text(order.dateOrder!, style: Theme.of(context).textTheme.subtitle2),
             Divider(),
             orderCardItem(context,
-                title: "order.orderstatus", data: order.orderStatus),
+                title: "order.orderstatus", data: order.orderStatus!),
             SizedBox(height: 12.0),
             orderCardItem(context,
                 title: "order.items",
@@ -48,7 +48,7 @@ class OrderCard extends StatelessWidget {
     );
   }
 
-  Widget orderCardItem(BuildContext context, {String title, String data}) {
+  Widget orderCardItem(BuildContext context, {required String title, required String data}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -58,7 +58,7 @@ class OrderCard extends StatelessWidget {
     );
   }
 
-  Widget priceItem(BuildContext context, {String title, String data}) {
+  Widget priceItem(BuildContext context, {required String title, required String data}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -66,7 +66,7 @@ class OrderCard extends StatelessWidget {
         Text(data,
             style: Theme.of(context)
                 .textTheme
-                .bodyText2
+                .bodyText2!
                 .copyWith(color: Theme.of(context).primaryColor)),
       ],
     );
